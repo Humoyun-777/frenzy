@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="image.png">
+    <title>Loading Animatsiyasi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f5f5f5;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .loading-container {
+            text-align: center;
+            color: white;
+        }
+
+        .loader {
+            width: 40px;
+            height: 40px;
+            border-radius: 4px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(360deg); }
+            100% { transform: rotate(0deg); }
+        }
+
+
+
+        /* Sayt kontenti - faqat loading animatsiyasi */
+        .main-content {
+            display: none;
+        }
+    </style>
+</head>
+<body style="background:  linear-gradient(orange);">
+    <div class="loading-container" id="loadingScreen">
+          <!-- Bu yerga oz saytingizni logotibini qoying -->
+        <div class="loader"><img style="height: 70px; width: 70px;" src="image.png" alt="Degriz Logo"></div>
+    </div>
+
+    <script>
+        setTimeout(function() {
+            // Bu yerga o'z web saytingizning URL manzilini yozing
+            window.location.href = "index.html";
+            
+            // Agar local faylga yo'naltirishni xohlasangiz:
+            // window.location.href = "main.html";
+            // Bu yerga o'z web saytingizning secundini yozing bu yerda 1000 degani 1 sekund
+        }, 1000);
+    </script>
+</body>
+</html>

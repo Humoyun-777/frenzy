@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frenzy Fast Food - Bog'lanish va Ijtimoiy Tarmoqlar</title>
+    <link rel="icon" href="image.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        :root {
+            --primary: #FF6B35;
+            --secondary: #F7931E;
+            --dark: #2C2C2C;
+            --light: #FFF8F0;
+            --white: #FFFFFF;
+            --shadow: rgba(0, 0, 0, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--light);
+            color: var(--dark);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding-top: 80px; /* Header balandligi uchun joy qoldirish */
+        }
+
+        /* --- Header uchun asosiy uslublar (TUZATILGAN QISM) --- */
+        .main-header {
+            background-color: var(--primary); /* Orange rang */
+            color: white;
+            padding: 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            height: 80px; /* Header balandligi */
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Elementlarni ikki chetga joylashtirish */
+            padding: 0 40px;
+            height: 100%; /* Header balandligiga moslash */
+        }
+
+        .mobile-menu-btn {
+            display: block; /* Doim ko'rinib turishi uchun */
+            background: none;
+            border: none;
+            color: white;
+            font-size: 30px; /* Kattaroq qilish */
+            cursor: pointer;
+            padding: 0;
+            margin: 0;
+        }
+
+        .main-logo {
+            display: flex;
+            align-items: center;
+            /* Logotipni o'ng tomonga surish uchun flex qoldiriladi, faqat tartibi o'zgartiriladi */
+        }
+
+        .main-logo img {
+            height: 60px; /* Rasmga mos balandlik */
+            width: auto;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+        }
+        
+        /* Kichik ekranlar uchun menyu yo'q */
+        .nav-menu {
+            display: none;
+        }
+
+        /* Mobil menyuni ochish uslubi */
+        .nav-menu.active {
+            display: flex;
+            position: absolute;
+            top: 80px; /* Header ostiga joylash */
+            left: 0;
+            width: 100%;
+            background: var(--primary);
+            flex-direction: column;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            padding-bottom: 10px;
+        }
+        
+        .nav-menu.active .nav-item {
+            width: 100%;
+            text-align: center;
+        }
+        
+        .nav-menu.active .nav-link {
+            padding: 15px 24px;
+            border-right: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (min-width: 769px) {
+            .mobile-menu-btn {
+                display: none; /* Katta ekranlarda yashirish */
+            }
+            .nav-menu {
+                display: flex; /* Katta ekranlarda menyuni ko'rsatish */
+                flex: 1;
+                justify-content: flex-start; /* Menyuni chapga yopishtirish */
+                margin-left: 20px;
+            }
+        }
+        /* --- Tugatildi: Header uchun asosiy uslublar --- */
+  /* Navigatsiya havolalari (Nav-links) uchun uslublar */
+  .nav-link {
+            color: white; /* Havola rangini oq qilish */
+            text-decoration: none; /* Tagidagi chiziqni olib tashlash */
+            padding: 20px 24px;
+            display: block;
+            font-weight: 500;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-menu.active .nav-link {
+            padding: 15px 24px;
+            border-right: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: white; /* Mobil menyudagi rangini ham oq qilish */
+            text-decoration: none; /* Mobil menyudagi tag chiziqni olib tashlash */
+        }
+        /* Qolgan uslublar, masalan .contact-container va boshqalar, o'zgarishsiz qoldirildi */
+
+        .contact-container {
+            flex-grow: 1;
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 40px;
+            background: var(--white);
+            border-radius: 30px;
+            box-shadow: 0 15px 50px var(--shadow);
+            text-align: center;
+        }
+
+        .contact-container h1 {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .contact-container p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 50px;
+        }
+
+        .content-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 50px;
+        }
+
+        .section-box {
+            background: linear-gradient(145deg, #FFF8F0 0%, #FFE8D0 100%);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 450px;
+            transition: transform 0.3s ease;
+        }
+        
+        .section-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.2);
+        }
+
+        .section-box h3 {
+            color: var(--dark);
+            margin-bottom: 25px;
+            font-weight: 700;
+            font-size: 1.8rem;
+            border-bottom: 3px solid var(--secondary);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+        
+        .social-links-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 350px;
+            padding: 15px;
+            border-radius: 10px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-btn i {
+            margin-right: 15px;
+            font-size: 1.5rem;
+        }
+
+        .social-btn.youtube {
+            background: #FF0000;
+        }
+        .social-btn.instagram {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+        }
+        .social-btn.facebook {
+            background: #1877F2;
+        }
+
+        .social-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .qr-code-img {
+            width: 250px;
+            height: 250px;
+            border: 10px solid var(--white);
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+        }
+        
+        .qr-box p {
+            font-size: 0.95rem;
+            color: #444;
+            margin-top: 15px;
+        }
+
+        .contact-info {
+            margin-top: 50px;
+            padding: 30px;
+            background: var(--primary);
+            color: white;
+            border-radius: 15px;
+        }
+
+        .contact-info a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 600;
+            display: block;
+            margin: 10px 0;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: var(--secondary);
+        }
+
+        footer {
+            background: linear-gradient(135deg, var(--dark) 0%, #1a1a1a 100%);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                margin: 40px 20px;
+                padding: 30px 20px;
+            }
+
+            .contact-container h1 {
+                font-size: 2.5rem;
+            }
+
+            .content-wrapper {
+                gap: 30px;
+            }
+
+            .qr-code-img {
+                width: 200px;
+                height: 200px;
+            }
+
+            .nav-container {
+                padding: 0 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <nav class="nav-container">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+            
+            <div class="main-logo">
+                <img style="height: 60px; width: auto;" src="image.png" alt="Logo">
+            </div>
+            
+            <ul style="gap: 10px; text-decoration: none; color: white;" class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a style="margin-top: 10px;" href="animatsiya1.html" class="nav-link">ASOSIY</a>
+                </li>
+                <li class="nav-item">
+                    <a style="margin-top: 10px;" href="animatsiya2.html" class="nav-link">REKLAMA</a>
+                </li>
+                <li class="nav-item">
+                    <a style="margin-top: 10px;" href="animatsiya3.html" class="nav-link">MA'LUMOT</a>
+                </li>
+                <li class="nav-item">
+                    <a style="margin-top: 10px;" href="#qr-kodlar" class="nav-link">BOG'LANISH</a>
+                </li>
+                <li class="nav-item">
+                    <a style="margin-top: 10px;" href="animatsiya5.html" class="nav-link">JOYLASHUV</a>
+                </li>
+                
+            </ul>
+        </nav> 
+    </header>
+
+    <div class="contact-container">
+        <h1>Biz Bilan Bog'laning</h1>
+        <p>Barcha ijtimoiy sahifalarimiz va bog'lanish ma'lumotlari bir joyda!</p>
+        
+        <div class="content-wrapper">
+            
+            <div class="section-box social-links-box">
+                <h3>Ijtimoiy Sahifalar</h3>
+                
+                <a href="https://www.youtube.com/@FrenzyUzbekistan" target="_blank" class="social-btn youtube">
+                    <i class="fab fa-youtube"></i> YouTube
+                </a>
+                
+                <a href="https://www.instagram.com/frenzy_zar?igsh=MXY4MDVwNnJmaHlwZA==" target="_blank" class="social-btn instagram">
+                    <i class="fab fa-instagram"></i> Instagram
+                </a>
+                
+                <a href="https://www.facebook.com/61567276617387" target="_blank" class="social-btn facebook">
+                    <i class="fab fa-facebook-f"></i> Facebook
+                </a>
+
+            </div>
+
+            <div id="qr-kodlar" class="section-box qr-box">
+                <h3>QR Kodlar</h3>
+                <img src="img/insta.png" alt="Instagram QR Code" class="qr-code-img">
+                <p>Instagramdagi sahifamizga o'tish uchun skannerlang</p>
+                <img src="img/youtube.png" alt="YouTube QR Code" class="qr-code-img">
+                <p>YouTubedagi sahifamizga o'tish uchun skannerlang</p>
+                <img src="img/face.png" alt="Facebook QR Code" class="qr-code-img">
+                <p>Facebookdagi sahifamizga o'tish uchun skannerlang</p>
+            </div>
+        </div>
+
+        <div class="contact-info">
+            <h3>Aloqa Ma'lumotlari</h3>
+            <br>
+            <p><i class="fas fa-phone-alt"></i> Telefonlar:</p>
+            <a href="tel:+ +998792005000"> +998 79 200 50 00</a>
+            <p style="margin-top: 20px;"><i class="fas fa-map-marker-alt"></i> Manzil:</p>
+            <a target="_blank" href="https://maps.app.goo.gl/bw834bJyaNrBdnup6">Manzilni korish uchun bosing</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Frenzy Fast Food. Barcha huquqlar himoyalangan.</p>
+    </footer>
+
+    <script>
+        // Mobile menu toggle funksiyasi
+        function toggleMobileMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        }
+        
+        // Havolani bosgandan keyin menyuni yopish
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                const navMenu = document.getElementById('navMenu');
+                // Faqat mobil menyu ochiq bo'lsa yopish
+                if (navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
+
+        // Logotipning joylashuvi uchun kerakli, ammo uslublarda hal qilingan.
+        // Asosiy logotip yo'qligi sababli `src=""` ga o'rniga "Logo_placeholder.png" yozdim.
+        // Agar logotip rasmi mavjud bo'lsa, uni shu yerga kiriting.
+    </script>
+</body>
+</html>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frenzy Fastfood - Ma'lumot</title>
+    <link rel="icon" href="image.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #FF6B35;
+            --secondary: #F7931E;
+            --dark: #2C2C2C;
+            --light: #FFF8F0;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--light);
+            color: var(--dark);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .main-header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 107, 53, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .main-header.scrolled {
+            background: rgba(255, 107, 53, 1);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 40px;
+        }
+
+        .logo {
+            height: 70px;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 5px;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            position: relative;
+            border-radius: 8px;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background: white;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .nav-link:hover::before {
+            width: 60%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 120px auto 0;
+            padding: 60px 30px;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            color: #FF6B35;
+            text-align: center;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 1.3rem;
+            color: #F7931E;
+            margin-bottom: 50px;
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        .info-section {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: #FF6B35;
+            margin-bottom: 20px;
+            font-weight: 700;
+            border-left: 5px solid #F7931E;
+            padding-left: 15px;
+        }
+
+        p {
+            font-size: 1.05rem;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #FFE8D0 0%, #FFF8F0 100%);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 4px solid #FF6B35;
+            margin: 20px 0;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, #FF6B35, #F7931E);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .contact-info p {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .location {
+            background: #FFF8F0;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+
+        .location strong {
+            color: #FF6B35;
+        }
+
+        ul {
+            margin-left: 25px;
+            margin-top: 15px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--primary);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .nav-link {
+                padding: 15px;
+                text-align: center;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .container {
+                padding: 40px 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .info-section {
+                padding: 25px;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header" id="header">
+        <nav class="nav-container">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+            <img src="image.png" alt="Frenzy Fast Food Logo" class="logo">
+            
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="animatsiya1.html" class="nav-link">Asosiy</a></li>
+                <li class="nav-item"><a href="animatsiya2.html" class="nav-link">Reklama</a></li>
+                <li class="nav-item"><a href="#malumot" class="nav-link">Ma'lumot</a></li>
+                <li class="nav-item"><a href="animatsiya4.html" class="nav-link">Bog'lanish</a></li>
+                <li class="nav-item"><a href="animatsiya5.html" class="nav-link">Joylashuv</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="malumot" class="container">
+        <h1>Frenzy Fastfood</h1>
+        <p class="subtitle">"Fast Food Emas, Bu - Frenzy!"</p>
+
+        <div class="info-section">
+            <h2>Brend Haqida Umumiy Ma'lumot</h2>
+            <p>Frenzy Fastfood — O'zbekistonda keyingi yillarda paydo bo'lgan yangi fastfood brendlaridan biri. Bu brend o'zini oddiy fastfood emas, balki mazali ta'm va yangi hissiyotlarni ulashuvchi loyiha sifatida taqdim etadi.</p>
+            
+            <div class="highlight">
+                <strong>Asosiy g'oya:</strong> Mijozlarga nafaqat ovqat, balki kayfiyat ulashish. Frenzy uchun bu biznes — oddiygina restoran emas, balki jamoaning orzu va hissiyotlari bilan yo'g'rilgan loyiha.
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h2>Markaziy Taom - Shirali Tovuq</h2>
+            <p>Frenzy'ning eng muhim xususiyati — barcha menyu <strong>shirali tovuqdan</strong> tayyorlanadi. Bu orqali ular o'zlarini boshqa fastfood tarmoqlaridan farqlashga harakat qiladilar.</p>
+            
+            <p><strong>Menyuda mavjud taomlar:</strong></p>
+            <ul>
+                <li>Tovuqdan tayyorlangan burgerlar</li>
+                <li>Lavash va sendvichlar</li>
+                <li>Boshqa shirali tovuq asosidagi tez tayyor taomlar</li>
+            </ul>
+            
+            <p>Taomlar nafaqat joyida iste'mol qilish uchun, balki <strong>yetkazib berish xizmati</strong> orqali ham mijozlarga yetkaziladi.</p>
+        </div>
+
+        <div class="info-section">
+            <h2>Brendning Reklama Uslubi</h2>
+            <p>Frenzy o'zini <em>"fast food emas, bu — Frenzy"</em> deb ataydi. Brendning reklama tilida ularning mehnati, orzulari va ishtiyoqi ta'kidlanadi.</p>
+            
+            <p>Instagram va boshqa ijtimoiy tarmoqlardagi postlari ko'proq <strong>ilhom beruvchi</strong> va brendga nisbatan <strong>samimiyat uyg'otuvchi</strong> uslubda yozilgan.</p>
+        </div>
+
+        <div class="info-section">
+            <h2>Filiallar va Joylashuv</h2>
+            <p>Frenzy Fastfoodning hozirgi paytda eng faol ishlayotgan filiallari:</p>
+            
+            <div class="location">
+                <p><strong>Zarafshon shahri</strong> — Asosiy markaziy filial</p>
+            </div>
+            
+            <div class="location">
+                <p><strong>Uchquduq shahri</strong> — Faol ishlaydigan filial</p>
+            </div>
+            
+            <p style="margin-top: 20px;">Kelajakda boshqa shaharlarda ham yangi filiallar ochilishi rejalashtirilmoqda. Hozircha Toshkent yoki boshqa yirik shaharlarda aniq joylashuvlar ochilmagan.</p>
+        </div>
+
+        <div class="info-section">
+            <h2>O'ziga Xos Jihatlari</h2>
+            <ul>
+                <li><strong>Shirali tovuq asosidagi menyu</strong> — barcha taomlar tovuqdan tayyorlanadi</li>
+                <li><strong>Issiq kayfiyat ulashuvchi reklama uslubi</strong> — samimiy va ilhomli kommunikatsiya</li>
+                <li><strong>Yetkazib berish xizmati</strong> — mijozlarga qulaylik yaratish</li>
+                <li><strong>Jamoaviy ruh</strong> — orzu va ishtiyoq bilan yo'g'rilgan loyiha</li>
+            </ul>
+        </div>
+
+        <div class="contact-info">
+            <h3>📞 Aloqa Ma'lumotlari</h3>
+            <p><strong>Telefon:</strong> +998 79 200 50 00</p>
+            <p><strong>Instagram:</strong> @frenzy.zarafshon</p>
+            <p><strong>Telegram:</strong> Frenzy Fastfood</p>
+            <p><strong>YouTube:</strong> Frenzy Fastfood Channel</p>
+            
+            <p style="margin-top: 20px; font-size: 0.95rem; opacity: 0.9;">
+                Frenzy ijtimoiy tarmoqlardan faol foydalanib, muntazam ravishda reklama roliklari, menyu suratlari va mijozlarni qiziqtiradigan yangiliklarni ulashib boradi.
+            </p>
+        </div>
+
+        <div class="info-section" style="margin-top: 40px; text-align: center; background: linear-gradient(135deg, #FFF8F0, #FFE8D0);">
+            <h2 style="border: none; padding: 0;">Xulosa</h2>
+            <p>Frenzy Fastfood qisqa vaqt ichida O'zbekistondagi fastfood bozorida o'z o'rnini egallashga harakat qilayotgan yangi brendlardan biridir. Shirali tovuqka asoslangan menyu, samimiy reklama uslubi va mijozlarga qulaylik yaratish — Frenzy'ni boshqa fastfoodlardan farqlovchi asosiy jihatlardir.</p>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+     // Mobile menu toggle
+     function toggleMobileMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        }
+         document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navMenu').classList.remove('active');
+            });
+        });
+</script>

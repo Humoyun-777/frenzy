@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frenzy Fast Food - Tez va Mazali!</title>
+    <link rel="icon" href="image.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #FF6B35;
+            --secondary: #F7931E;
+            --dark: #2C2C2C;
+            --light: #FFF8F0;
+            --white: #FFFFFF;
+            --shadow: rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        /* Animated Header */
+        .main-header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 107, 53, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .main-header.scrolled {
+            background: rgba(255, 107, 53, 1);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 40px;
+        }
+
+        .logo {
+            height: 70px;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 5px;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            position: relative;
+            border-radius: 8px;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background: white;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .nav-link:hover::before {
+            width: 60%;
+        }
+
+        .phone-selector {
+            position: relative;
+        }
+
+        .phone-select {
+            appearance: none;
+            background: white;
+            border: 2px solid var(--secondary);
+            border-radius: 25px;
+            padding: 12px 45px 12px 20px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            outline: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .phone-select:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(255, 107, 53, 0.3);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        #asosiy {
+            margin-top: 100px;
+            background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+            padding: 120px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #asosiy::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: moveBackground 20s linear infinite;
+        }
+
+        @keyframes moveBackground {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        #asosiy img {
+            max-width: 400px;
+            width: 100%;
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+            animation: float 3s ease-in-out infinite;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        #asosiy h2 {
+            font-size: 3.5rem;
+            color: white;
+            margin: 30px 0 20px;
+            font-weight: 800;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1;
+            animation: slideInDown 0.8s ease;
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        #asosiy p {
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+            animation: fadeIn 1s ease 0.3s both;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 18px 50px;
+            background: white;
+            color: var(--primary);
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1;
+            animation: fadeIn 1s ease 0.6s both;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            background: var(--light);
+        }
+
+        /* Menu Section */
+        section {
+            max-width: 1400px;
+            margin: 60px auto;
+            padding: 60px 40px;
+            background: white;
+            border-radius: 30px;
+            box-shadow: 0 10px 50px var(--shadow);
+        }
+
+        section h2 {
+            font-size: 3rem;
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 60px;
+            font-weight: 800;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 10px;
+        }
+
+        .menu-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .item {
+            background: linear-gradient(135deg, #FFF8F0 0%, #FFE8D0 100%);
+            border-radius: 25px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 0;
+        }
+
+        .item:hover::before {
+            opacity: 0.1;
+        }
+
+        .item:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 50px rgba(255, 107, 53, 0.3);
+        }
+
+        .item img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 5px solid var(--primary);
+            transition: all 0.4s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .item:hover img {
+            transform: scale(1.1) rotate(5deg);
+            border-color: var(--secondary);
+        }
+
+        .item h3 {
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+
+        .item p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 0.95rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* About Section */
+        #biz-haqimizda {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+        }
+
+        #biz-haqimizda h2 {
+            color: white;
+        }
+
+        #biz-haqimizda h2::after {
+            background: white;
+        }
+
+        #biz-haqimizda p {
+            font-size: 1.3rem;
+            line-height: 2;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Contact Form */
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        input, textarea {
+            padding: 18px 25px;
+            border: 2px solid #E0E0E0;
+            border-radius: 15px;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+            background: var(--light);
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: white;
+            box-shadow: 0 5px 20px rgba(255, 107, 53, 0.2);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        button[type="submit"] {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            padding: 18px;
+            border-radius: 15px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        button[type="submit"]:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
+        }
+
+        #formResult {
+            margin-top: 20px;
+            color: var(--primary);
+            font-weight: 600;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--dark) 0%, #1a1a1a 100%);
+            color: white;
+            text-align: center;
+            padding: 40px;
+            margin-top: 60px;
+            font-size: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--primary);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .nav-link {
+                padding: 15px;
+                text-align: center;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .phone-selector {
+                display: none;
+            }
+
+            #asosiy {
+                padding: 80px 20px;
+            }
+
+            #asosiy h2 {
+                font-size: 2.5rem;
+            }
+
+            #asosiy p {
+                font-size: 1.2rem;
+            }
+
+            section {
+                padding: 40px 20px;
+            }
+
+            section h2 {
+                font-size: 2rem;
+            }
+
+            .menu-items {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header" id="header">
+        <nav class="nav-container">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+            <img src="image.png" alt="Frenzy Fast Food Logo" class="logo">
+            
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="#asosiy" class="nav-link">Asosiy</a></li>
+                <li class="nav-item"><a href="animatsiya2.html" class="nav-link">Reklama</a></li>
+                <li class="nav-item"><a href="animatsiya3.html" class="nav-link">Ma'lumot</a></li>
+                <li class="nav-item"><a href="animatsiya4.html" class="nav-link">Bog'lanish</a></li>
+                <li class="nav-item"><a href="animatsiya5.html" class="nav-link">Joylashuv</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="asosiy">
+        <img src="image copy.png" alt="Frenzy Fast Food">
+        <h2>Xush kelibsiz, Frenzy Fast Food!</h2>
+        <p>Tez, mazali va sifatli taomlar bizda!</p>
+        <a href="#menyu" class="btn">Menyuni Ko'rish</a>
+    </section>
+
+    <section id="menyu">
+        <h2>Bizning Menyumiz</h2>
+        <div class="menu-items">
+            <div class="item">
+                <img src="https://images.pexels.com/photos/1639562/pexels-photo-1639562.jpeg?auto=compress&w=400&h=400&fit=crop" alt="Burger">
+                <h3>Burger</h3>
+                <p>Yumshoq non, mazali go'sht va yangi sabzavotlar.</p>
+            </div>
+            <div class="item">
+                <img src="https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&w=400&h=400&fit=crop" alt="Pizza">
+                <h3>Pizza</h3>
+                <p>Turli xil to'ldirish bilan issiq pizza.</p>
+            </div>
+            <div class="item">
+                <img src="https://images.pexels.com/photos/461382/pexels-photo-461382.jpeg?auto=compress&w=400&h=400&fit=crop" alt="Lavash">
+                <h3>Lavash</h3>
+                <p>Qarsildoq lavash, to'ldirilgan go'sht va sabzavotlar.</p>
+            </div>
+            <div class="item">
+                <img src="https://images.pexels.com/photos/461382/pexels-photo-461382.jpeg?auto=compress&w=400&h=400&fit=crop" alt="Shaurma">
+                <h3>Shaurma</h3>
+                <p>Go'sht va sabzavotlar bilan to'ldirilgan shaurma.</p>
+            </div>
+            <div class="item">
+                <img src="https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?auto=compress&w=400&h=400&fit=crop" alt="Hot-dog">
+                <h3>Hot-dog</h3>
+                <p>Issiq kolbasa, yangi non va souslar bilan.</p>
+            </div>
+            <div class="item">
+                <img src="https://images.pexels.com/photos/1580466/pexels-photo-1580466.jpeg?auto=compress&w=400&h=400&fit=crop" alt="Kartoshka fri">
+                <h3>Kartoshka Fri</h3>
+                <p>Qarsildoq va oltin rangli kartoshka fri.</p>
+            </div>
+            <div class="item">
+                <img src="https://images.pexels.com/photos/461382/pexels-photo-461382.jpeg?auto=compress&w=400&h=400&fit=crop" alt="Donar">
+                <h3>Donar Kebab</h3>
+                <p>Go'sht va sabzavotlar bilan to'ldirilgan donar.</p>
+            </div>
+            <div class="item">
+                <img src="https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&w=400&h=400&fit=crop" alt="Nuggets">
+                <h3>Tovuq Nuggets</h3>
+                <p>Qarsildoq va mazali tovuq nuggetslar.</p>
+            </div>
+            <div class="item">
+                <img src="https://images.pexels.com/photos/461382/pexels-photo-461382.jpeg?auto=compress&w=400&h=400&fit=crop" alt="Sandwich">
+                <h3>Sandwich</h3>
+                <p>Yangi non, go'sht va sabzavotlar bilan sandwich.</p>
+            </div>
+            <div class="item">
+                <img src="https://images.pexels.com/photos/461382/pexels-photo-461382.jpeg?auto=compress&w=400&h=400&fit=crop" alt="Chizburger">
+                <h3>Chizburger</h3>
+                <p>Pishloq va go'shtli burger.</p>
+            </div>
+            <div class="item">
+                <img src="https://images.pexels.com/photos/461382/pexels-photo-461382.jpeg?auto=compress&w=400&h=400&fit=crop" alt="Milkshake">
+                <h3>Milkshake</h3>
+                <p>Turli xil ta'mdagi sovuq milkshake.</p>
+            </div>
+            <div class="item">
+                <img src="https://images.pexels.com/photos/461382/pexels-photo-461382.jpeg?auto=compress&w=400&h=400&fit=crop" alt="Ichimliklar">
+                <h3>Ichimliklar</h3>
+                <p>Sovuq va gazli ichimliklar.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="biz-haqimizda">
+        <h2>Biz Haqimizda</h2>
+        <p>Frenzy Fast Food — bu tez va mazali ovqatlanish uchun eng yaxshi tanlov! Biz har doim yangi va sifatli mahsulotlardan foydalanamiz. Mijozlarimizning mamnuniyati bizning asosiy maqsadimiz!</p>
+    </section>
+
+    <section id="aloqa">
+        <h2>Biz bilan Bog'laning</h2>
+        <form id="contactForm">
+            <input type="text" placeholder="Ismingiz" id="name" required>
+            <input type="email" placeholder="Email manzilingiz" id="email" required>
+            <textarea placeholder="Xabaringiz" id="message"></textarea>
+            <button type="submit">Yuborish</button>
+        </form>
+        <div id="formResult"></div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Frenzy Fast Food. Barcha huquqlar himoyalangan.</p>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if(window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('formResult').textContent = "✓ Xabaringiz muvaffaqiyatli yuborildi!";
+            this.reset();
+            setTimeout(() => {
+                document.getElementById('formResult').textContent = "";
+            }, 3000);
+        });
+
+        // Mobile menu
+        function toggleMobileMenu() {
+            document.getElementById('navMenu').classList.toggle('active');
+        }
+
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navMenu').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
