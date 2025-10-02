@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frenzy Fast Food - Tez va Mazali!</title>
+    <title>Frenzy Fast Food - Быстро и Вкусно!</title>
     <link rel="icon" href="image.png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
+        /* (CSS code remains unchanged) */
         * {
             margin: 0;
             padding: 0;
@@ -663,32 +664,6 @@
                 font-size: 60px;
             }
         }
-        .lang-selector {
-            display: inline-block;
-            position: relative;
-            font-family: Arial, sans-serif;
-        }
-        
-        .lang-select {
-            padding: 4px 20px 4px 8px;
-            font-size: 12px;
-            border: 1px solid #ddd;
-            border-radius: 3px;
-            background: white url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e") no-repeat right 4px center;
-            background-size: 12px;
-            cursor: pointer;
-            min-width: 45px;
-            appearance: none;
-            color: #555;
-        }
-        
-        .lang-select:hover {
-            border-color: #999;
-        }
-        
-        .lang-select:focus {
-            border-color: #007bff;
-        }
     </style>
 </head>
 <body>
@@ -698,29 +673,29 @@
             <img src="image.png" alt="Frenzy Fast Food Logo" class="logo">
             
             <ul class="nav-menu" id="navMenu">
-                <li class="nav-item"><a href="#asosiy" class="nav-link">Asosiy</a></li>
-                <li class="nav-item"><a href="animatsiya2.html" class="nav-link">Reklama</a></li>
-                <li class="nav-item"><a href="animatsiya3.html" class="nav-link">Ma'lumot</a></li>
-                <li class="nav-item"><a href="animatsiya4.html" class="nav-link">Bog'lanish</a></li>
-                <li class="nav-item"><a href="animatsiya5.html" class="nav-link">Joylashuv</a></li>
+                <li class="nav-item"><a href="#asosiy" class="nav-link">Главная</a></li>
+                <li class="nav-item"><a href="animatsiya2 copy.html" class="nav-link">Реклама</a></li>
+                <li class="nav-item"><a href="animatsiya3 copy.html" class="nav-link">Информация</a></li>
+                <li class="nav-item"><a href="animatsiya4 copy.html" class="nav-link">Контакты</a></li>
+                <li class="nav-item"><a href="animatsiya5 copy.html" class="nav-link">Местоположение</a></li>
             </ul>
             <select style=" background-color: rgba(255, 107, 53, 0.95); color: white; margin-left: 15px;" class="lang-select" onchange="goToSite(this.value); this.selectedIndex=0;">
-                <option selected >Til</option>
+                <option selected >Язык</option>
                 <option value="index1.html">En</option>
-                <option value="index copy.html">Ru</option>
+                <option value="index.html">Uz</option>
             </select>
         </nav>
     </header>
 
     <section id="asosiy">
         <img src="image copy.png" alt="Frenzy Fast Food">
-        <h2>Xush kelibsiz, Frenzy Fast Food!</h2>
-        <p>Tez, mazali va sifatli taomlar bizda!</p>
-        <a href="#menyu" class="btn">Menyuni Ko'rish</a>
+        <h2>Добро пожаловать, Frenzy Fast Food!</h2>
+        <p>Быстрая, вкусная и качественная еда у нас!</p>
+        <a href="#menyu" class="btn">Посмотреть Меню</a>
     </section>
 
     <div id="menyu" class="header">
-        <h1>MENYU</h1>
+        <h1>МЕНЮ</h1>
         <div class="contact-info">
             <div class="contact-item">
                 <span>📞</span>
@@ -734,15 +709,14 @@
     </div>
 
     <div class="menu-container">
-        <!-- Kombo Taomlar -->
         <div class="section">
-            <h2 class="section-title">🎁 Kombo Taomlar</h2>
+            <h2 class="section-title">🎁 Комбо Наборы</h2>
             <div class="menu-grid">
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 5.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">50/50 kombo</div>
-                        <div class="item-description">Strips original 0.5 kg<br>Oyoqcha 0.5 kg / fri</div>
+                        <div class="item-name">Комбо 50/50</div>
+                        <div class="item-description">Стрипсы оригинал 0.5 кг<br>Голень 0.5 кг / фри</div>
                         <div class="price-container">
                             <span class="old-price">105.000</span>
                             <span class="price">90.000</span>
@@ -752,8 +726,8 @@
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 6.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Twister kombo</div>
-                        <div class="item-description">2 shank / 1 fri<br>1 twister / ice tea choy</div>
+                        <div class="item-name">Комбо Твистер</div>
+                        <div class="item-description">2 шенка / 1 фри<br>1 твистер / чай айс ти</div>
                         <div class="price-container">
                             <span class="old-price">49.000</span>
                             <span class="price">35.000</span>
@@ -763,8 +737,8 @@
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 3.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Burger kombo</div>
-                        <div class="item-description">2 chicken fri / 1 fri<br>1 burger / ice tea choy</div>
+                        <div class="item-name">Комбо Бургер</div>
+                        <div class="item-description">2 чикен фри / 1 фри<br>1 бургер / чай айс ти</div>
                         <div class="price-container">
                             <span class="old-price">53.000</span>
                             <span class="price">40.000</span>
@@ -774,8 +748,8 @@
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 4.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Longer kombo</div>
-                        <div class="item-description">2 naggets / 1 fri / Longer<br>Ice Tea choy</div>
+                        <div class="item-name">Комбо Лонгер</div>
+                        <div class="item-description">2 наггетса / 1 фри / Лонгер<br>Чай Айс Ти</div>
                         <div class="price-container">
                             <span class="old-price">49.000</span>
                             <span class="price">35.000</span>
@@ -785,364 +759,357 @@
             </div>
         </div>
 
-        <!-- Toyuq Mahsulotlari -->
         <div class="section">
-            <h2 class="section-title">🍗 To'yuq Mahsulotlari</h2>
+            <h2 class="section-title">🍗 Продукты из Курицы</h2>
             <div class="menu-grid">
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 7.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Mozzarella - 3 ta</div>
-                        <div class="item-description">Pishloq bilan</div>
+                        <div class="item-name">Моцарелла - 3 шт</div>
+                        <div class="item-description">С сыром</div>
                         <div class="price">25.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 8.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Naggets - 5 ta</div>
-                        <div class="item-description">Tovuq nuggetlari</div>
+                        <div class="item-name">Наггетсы - 5 шт</div>
+                        <div class="item-description">Куриные наггетсы</div>
                         <div class="price">15.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 9.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Sharik - 7 ta</div>
-                        <div class="item-description">To'yuq shariklari</div>
+                        <div class="item-name">Шарики - 7 шт</div>
+                        <div class="item-description">Куриные шарики</div>
                         <div class="price">20.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 10.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Oyoqcha</div>
-                        <div class="item-description">0.5 kg</div>
+                        <div class="item-name">Голень</div>
+                        <div class="item-description">0.5 кг</div>
                         <div class="price">45.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 10.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Oyoqcha</div>
-                        <div class="item-description">1 kg</div>
+                        <div class="item-name">Голень</div>
+                        <div class="item-description">1 кг</div>
                         <div class="price">80.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 11.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Qanotcha (achchiq)</div>
-                        <div class="item-description">0.5 kg</div>
+                        <div class="item-name">Крылышки (острые)</div>
+                        <div class="item-description">0.5 кг</div>
                         <div class="price">40.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 11.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Qanotcha (achchiq)</div>
-                        <div class="item-description">1 kg</div>
+                        <div class="item-name">Крылышки (острые)</div>
+                        <div class="item-description">1 кг</div>
                         <div class="price">70.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 12.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Strips (original)</div>
-                        <div class="item-description">0.5 kg</div>
+                        <div class="item-name">Стрипсы (оригинал)</div>
+                        <div class="item-description">0.5 кг</div>
                         <div class="price">45.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 12.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Strips (original)</div>
-                        <div class="item-description">1 kg</div>
+                        <div class="item-name">Стрипсы (оригинал)</div>
+                        <div class="item-description">1 кг</div>
                         <div class="price">80.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 12.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Strips (achchiq)</div>
-                        <div class="item-description">0.5 kg</div>
+                        <div class="item-name">Стрипсы (острые)</div>
+                        <div class="item-description">0.5 кг</div>
                         <div class="price">45.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 12.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Strips (achchiq)</div>
-                        <div class="item-description">1 kg</div>
+                        <div class="item-name">Стрипсы (острые)</div>
+                        <div class="item-description">1 кг</div>
                         <div class="price">80.000</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Burgerlar -->
         <div class="section">
-            <h2 class="section-title">🍔 Burgerlar</h2>
+            <h2 class="section-title">🍔 Бургеры</h2>
             <div class="menu-grid">
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 13.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Burger klassik</div>
-                        <div class="item-description">Klassik burger</div>
+                        <div class="item-name">Бургер классик</div>
+                        <div class="item-description">Классический бургер</div>
                         <div class="price">23.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 13.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Burger cheese</div>
-                        <div class="item-description">Pishloqli burger</div>
+                        <div class="item-name">Бургер чиз</div>
+                        <div class="item-description">Сырный бургер</div>
                         <div class="price">25.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 14.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Burger zinger</div>
-                        <div class="item-description">Achchiq burger</div>
+                        <div class="item-name">Бургер зингер</div>
+                        <div class="item-description">Острый бургер</div>
                         <div class="price">23.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 16.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Longer klassik</div>
-                        <div class="item-description">Klassik longer</div>
+                        <div class="item-name">Лонгер классик</div>
+                        <div class="item-description">Классический лонгер</div>
                         <div class="price">19.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 15.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Longer cheese</div>
-                        <div class="item-description">Pishloqli longer</div>
+                        <div class="item-name">Лонгер чиз</div>
+                        <div class="item-description">Сырный лонгер</div>
                         <div class="price">21.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 17.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Longer zinger</div>
-                        <div class="item-description">Achchiq longer</div>
+                        <div class="item-name">Лонгер зингер</div>
+                        <div class="item-description">Острый лонгер</div>
                         <div class="price">19.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 18.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Longer mozzarella</div>
-                        <div class="item-description">Mozzarella bilan</div>
+                        <div class="item-name">Лонгер моцарелла</div>
+                        <div class="item-description">С моцареллой</div>
                         <div class="price">25.000</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Twisterlar -->
         <div class="section">
-            <h2 class="section-title">🌯 Twisterlar</h2>
+            <h2 class="section-title">🌯 Твистеры</h2>
             <div class="menu-grid">
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 19.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Twister klassik</div>
-                        <div class="item-description">Klassik lavash</div>
+                        <div class="item-name">Твистер классик</div>
+                        <div class="item-description">Классический лаваш</div>
                         <div class="price">19.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 20.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Twister cheese</div>
-                        <div class="item-description">Pishloqli lavash</div>
+                        <div class="item-name">Твистер чиз</div>
+                        <div class="item-description">Сырный лаваш</div>
                         <div class="price">21.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 21.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Twister Zinger</div>
-                        <div class="item-description">Achchiq lavash</div>
+                        <div class="item-name">Твистер Зингер</div>
+                        <div class="item-description">Острый лаваш</div>
                         <div class="price">19.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 22.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Twister Sezar</div>
-                        <div class="item-description">Sezar sousi bilan</div>
+                        <div class="item-name">Твистер Цезарь</div>
+                        <div class="item-description">С соусом Цезарь</div>
                         <div class="price">19.000</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Frilar -->
         <div class="section">
-            <h2 class="section-title">🍟 Frilar</h2>
+            <h2 class="section-title">🍟 Фри</h2>
             <div class="menu-grid">
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 23.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Kartoshka fri</div>
-                        <div class="item-description">Klassik kartoshka fri</div>
+                        <div class="item-name">Картофель фри</div>
+                        <div class="item-description">Классический картофель фри</div>
                         <div class="price">15.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 24.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Jaydari kartoshka</div>
-                        <div class="item-description">Qalin fri</div>
+                        <div class="item-name">Картофель по-деревенски</div>
+                        <div class="item-description">Толстый фри</div>
                         <div class="price">17.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 25.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Chicken fri - 5 ta</div>
-                        <div class="item-description">To'yuq fri</div>
+                        <div class="item-name">Чикен фри - 5 шт</div>
+                        <div class="item-description">Куриный фри</div>
                         <div class="price">15.000</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Salatlar va Non -->
         <div class="section">
-            <h2 class="section-title">🥗 Salatlar va Non</h2>
+            <h2 class="section-title">🥗 Салаты и Хлеб</h2>
             <div class="menu-grid">
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 27.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Sezar salati</div>
-                        <div class="item-description">To'yuq va sabzavot salati</div>
+                        <div class="item-name">Салат Цезарь</div>
+                        <div class="item-description">Салат с курицей и овощами</div>
                         <div class="price">28.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 28.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Frenzy salati</div>
-                        <div class="item-description">Maxsus salat</div>
+                        <div class="item-name">Салат Френзи</div>
+                        <div class="item-description">Специальный салат</div>
                         <div class="price">25.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 26.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Non</div>
-                        <div class="item-description">Yangi non</div>
+                        <div class="item-name">Хлеб</div>
+                        <div class="item-description">Свежий хлеб</div>
                         <div class="price">2.000</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Ichimliklar -->
         <div class="section">
-            <h2 class="section-title">🥤 Qaynoq va yaxna ichimliklar</h2>
+            <h2 class="section-title">🥤 Горячие и холодные напитки</h2>
             <div class="drinks-grid">
                 <div class="menu-item">
                     <div class="item-image" style="height: 150px; font-size: 60px;"><img style="height: 150px;" src="image copy 39.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Choy</div>
+                        <div class="item-name">Чай</div>
                         <div class="price">3.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image" style="height: 150px; font-size: 60px;"><img style="height: 150px;" src="image copy 38.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Limonli choy</div>
+                        <div class="item-name">Чай с лимоном</div>
                         <div class="price">6.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image" style="height: 150px; font-size: 60px;"><img style="height: 150px;" src="image copy 40.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Kofe</div>
+                        <div class="item-name">Кофе</div>
                         <div class="price">5.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image" style="height: 150px; font-size: 60px;"><img style="height: 150px;" src="image copy 41.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Cappucino</div>
+                        <div class="item-name">Капучино</div>
                         <div class="price">7.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image" style="height: 150px; font-size: 60px;"><img style="height: 150px;" src="image copy 36.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Ice tea</div>
+                        <div class="item-name">Айс ти</div>
                         <div class="price">9.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image" style="height: 150px; font-size: 60px;"><img style="height: 150px;" src="image copy 37.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Pepsi razliv</div>
+                        <div class="item-name">Пепси разлив</div>
                         <div class="price">9.000</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Souslar -->
         <div class="section">
-            <h2 class="section-title">🧂 Souslar</h2>
+            <h2 class="section-title">🧂 Соусы</h2>
             <div class="sauces-grid">
                 <div class="menu-item">
                     <div class="item-image" style="height: 120px; font-size: 50px;"><img src="image copy 29.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Sarimsqli</div>
+                        <div class="item-name">Чесночный</div>
                         <div class="price">5.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image" style="height: 120px; font-size: 50px;"><img src="image copy 30.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Ketchup</div>
+                        <div class="item-name">Кетчуп</div>
                         <div class="price">5.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image" style="height: 120px; font-size: 50px;"><img src="image copy 31.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Shirin-nordon</div>
+                        <div class="item-name">Кисло-сладкий</div>
                         <div class="price">5.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image" style="height: 120px; font-size: 50px;"><img src="image copy 32.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Pomidorli</div>
+                        <div class="item-name">Томатный</div>
                         <div class="price">5.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image" style="height: 120px; font-size: 50px;"><img src="image copy 33.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Pishloqli</div>
+                        <div class="item-name">Сырный</div>
                         <div class="price">5.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image" style="height: 120px; font-size: 50px;"><img src="image copy 34.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Tartar</div>
+                        <div class="item-name">Тартар</div>
                         <div class="price">5.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image" style="height: 120px; font-size: 50px;"><img src="image copy 35.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Sezar</div>
+                        <div class="item-name">Цезарь</div>
                         <div class="price">5.000</div>
                     </div>
                 </div>
@@ -1151,26 +1118,27 @@
     </div>
 
     <section id="biz-haqimizda">
-        <h2>Biz Haqimizda</h2>
-        <p>Frenzy Fast Food — bu tez va mazali ovqatlanish uchun eng yaxshi tanlov! Biz har doim yangi va sifatli mahsulotlardan foydalanamiz. Mijozlarimizning mamnuniyati bizning asosiy maqsadimiz!</p>
+        <h2>О нас</h2>
+        <p>Frenzy Fast Food — это лучший выбор для быстрого и вкусного питания! Мы всегда используем свежие и качественные продукты. Удовлетворение наших клиентов — наша основная цель!</p>
     </section>
 
     <section id="aloqa">
-        <h2>Biz bilan Bog'laning</h2>
+        <h2>Связаться с нами</h2>
         <form id="contactForm">
-            <input type="text" placeholder="Ismingiz" id="name" required>
-            <input type="email" placeholder="Email manzilingiz" id="email" required>
-            <textarea placeholder="Xabaringiz" id="message"></textarea>
-            <button type="submit">Yuborish</button>
+            <input type="text" placeholder="Ваше имя" id="name" required>
+            <input type="email" placeholder="Ваш адрес электронной почты" id="email" required>
+            <textarea placeholder="Ваше сообщение" id="message"></textarea>
+            <button type="submit">Отправить</button>
         </form>
         <div id="formResult"></div>
     </section>
 
     <footer>
-        <p>&copy; 2025 Frenzy Fast Food. Barcha huquqlar himoyalangan.</p>
+        <p>&copy; 2025 Frenzy Fast Food. Все права защищены.</p>
     </footer>
 
     <script>
+        // (JavaScript code remains unchanged)
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
@@ -1195,7 +1163,7 @@
         // Form submission
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            document.getElementById('formResult').textContent = "✓ Xabaringiz muvaffaqiyatli yuborildi!";
+            document.getElementById('formResult').textContent = "✓ Ваше сообщение успешно отправлено!";
             this.reset();
             setTimeout(() => {
                 document.getElementById('formResult').textContent = "";

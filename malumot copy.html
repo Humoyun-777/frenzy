@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frenzy Fastfood - Информация</title>
+    <link rel="icon" href="image.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #FF6B35;
+            --secondary: #F7931E;
+            --dark: #2C2C2C;
+            --light: #FFF8F0;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--light);
+            color: var(--dark);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .main-header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 107, 53, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .main-header.scrolled {
+            background: rgba(255, 107, 53, 1);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 40px;
+        }
+
+        .logo {
+            height: 70px;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 5px;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            position: relative;
+            border-radius: 8px;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background: white;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .nav-link:hover::before {
+            width: 60%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 120px auto 0;
+            padding: 60px 30px;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            color: #FF6B35;
+            text-align: center;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 1.3rem;
+            color: #F7931E;
+            margin-bottom: 50px;
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        .info-section {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: #FF6B35;
+            margin-bottom: 20px;
+            font-weight: 700;
+            border-left: 5px solid #F7931E;
+            padding-left: 15px;
+        }
+
+        p {
+            font-size: 1.05rem;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #FFE8D0 0%, #FFF8F0 100%);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 4px solid #FF6B35;
+            margin: 20px 0;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, #FF6B35, #F7931E);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .contact-info p {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .location {
+            background: #FFF8F0;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+
+        .location strong {
+            color: #FF6B35;
+        }
+
+        ul {
+            margin-left: 25px;
+            margin-top: 15px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--primary);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .nav-link {
+                padding: 15px;
+                text-align: center;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .container {
+                padding: 40px 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .info-section {
+                padding: 25px;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header" id="header">
+        <nav class="nav-container">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+            <img src="image.png" alt="Логотип Frenzy Fast Food" class="logo">
+            
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="animatsiya1 copy.html" class="nav-link">Главная</a></li>
+                <li class="nav-item"><a href="animatsiya2 copy.html" class="nav-link">Реклама</a></li>
+                <li class="nav-item"><a href="#malumot" class="nav-link">Информация</a></li>
+                <li class="nav-item"><a href="animatsiya4 copy.html" class="nav-link">Контакты</a></li>
+                <li class="nav-item"><a href="animatsiya5 copy.html" class="nav-link">Местоположение</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="malumot" class="container">
+        <h1>Frenzy Fastfood</h1>
+        <p class="subtitle">"Это Не Фастфуд, Это — Frenzy!"</p>
+
+        <div class="info-section">
+            <h2>Общая Информация о Бренде</h2>
+            <p>Frenzy Fastfood — один из новых брендов быстрого питания, появившихся в Узбекистане в последние годы. Этот бренд позиционирует себя не просто как фастфуд, а как проект, который делится вкусным ароматом и новыми эмоциями.</p>
+            
+            <div class="highlight">
+                <strong>Основная идея:</strong> Делиться с клиентами не только едой, но и настроением. Для Frenzy этот бизнес — не просто ресторан, а проект, пронизанный мечтами и эмоциями команды.
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h2>Центральное Блюдо - Сочная Курица</h2>
+            <p>Самая важная особенность Frenzy — все меню готовится из <strong>сочной курицы</strong>. Таким образом, они стремятся отличаться от других сетей быстрого питания.</p>
+            
+            <p><strong>Блюда, доступные в меню:</strong></p>
+            <ul>
+                <li>Бургеры с курицей</li>
+                <li>Лаваш и сэндвичи</li>
+                <li>Другие блюда быстрого приготовления на основе сочной курицы</li>
+            </ul>
+            
+            <p>Блюда доставляются клиентам не только для употребления на месте, но и через <strong>службу доставки</strong>.</p>
+        </div>
+
+        <div class="info-section">
+            <h2>Рекламный Стиль Бренда</h2>
+            <p>Frenzy называет себя <em>"не фастфуд, это — Frenzy"</em>. В рекламном языке бренда подчеркиваются их труд, мечты и энтузиазм.</p>
+            
+            <p>Их посты в Instagram и других социальных сетях написаны в более <strong>вдохновляющем</strong> стиле, вызывающем <strong>искренность</strong> по отношению к бренду.</p>
+        </div>
+
+        <div class="info-section">
+            <h2>Филиалы и Местоположение</h2>
+            <p>Наиболее активно работающие филиалы Frenzy Fastfood на данный момент:</p>
+            
+            <div class="location">
+                <p><strong>Город Зарафшан</strong> — Основной центральный филиал</p>
+            </div>
+            
+            <div class="location">
+                <p><strong>Город Учкудук</strong> — Активно работающий филиал</p>
+            </div>
+            
+            <p style="margin-top: 20px;">В будущем планируется открытие новых филиалов и в других городах. На данный момент конкретные места в Ташкенте или других крупных городах не открыты.</p>
+        </div>
+
+        <div class="info-section">
+            <h2>Особенности</h2>
+            <ul>
+                <li><strong>Меню на основе сочной курицы</strong> — все блюда готовятся из курицы</li>
+                <li><strong>Рекламный стиль, дарящий теплое настроение</strong> — искреннее и вдохновляющее общение</li>
+                <li><strong>Служба доставки</strong> — создание удобства для клиентов</li>
+                <li><strong>Командный дух</strong> — проект, пронизанный мечтами и энтузиазмом</li>
+            </ul>
+        </div>
+
+        <div class="contact-info">
+            <h3>📞 Контактная Информация</h3>
+            <p><strong>Телефон:</strong> +998 79 200 50 00</p>
+            <p><strong>Instagram:</strong> @frenzy.zarafshon</p>
+            <p><strong>Telegram:</strong> Frenzy Fastfood</p>
+            <p><strong>YouTube:</strong> Frenzy Fastfood Channel</p>
+            
+            <p style="margin-top: 20px; font-size: 0.95rem; opacity: 0.9;">
+                Frenzy активно использует социальные сети, регулярно делясь рекламными роликами, фотографиями меню и новостями, которые интересуют клиентов.
+            </p>
+        </div>
+
+        <div class="info-section" style="margin-top: 40px; text-align: center; background: linear-gradient(135deg, #FFF8F0, #FFE8D0);">
+            <h2 style="border: none; padding: 0;">Заключение</h2>
+            <p>Frenzy Fastfood — один из новых брендов, стремящихся занять свое место на рынке фастфуда Узбекистана за короткое время. Меню на основе сочной курицы, искренний рекламный стиль и создание удобств для клиентов — вот ключевые аспекты, отличающие Frenzy от других фастфудов.</p>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+     // Mobile menu toggle
+     function toggleMobileMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        }
+         document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navMenu').classList.remove('active');
+            });
+        });
+</script>

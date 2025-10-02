@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="uz">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frenzy Fast Food - Tez va Mazali!</title>
+    <title>Frenzy Fast Food - Fast and Delicious!</title>
     <link rel="icon" href="image.png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -138,7 +138,7 @@
         }
 
         /* Hero Section */
-        #asosiy {
+        #home {
             margin-top: 100px;
             background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
             padding: 120px 40px;
@@ -147,7 +147,7 @@
             overflow: hidden;
         }
 
-        #asosiy::before {
+        #home::before {
             content: '';
             position: absolute;
             top: -50%;
@@ -164,7 +164,7 @@
             100% { transform: translate(50px, 50px); }
         }
 
-        #asosiy img {
+        #home img {
             max-width: 400px;
             width: 100%;
             filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
@@ -178,7 +178,7 @@
             50% { transform: translateY(-20px); }
         }
 
-        #asosiy h2 {
+        #home h2 {
             font-size: 3.5rem;
             color: white;
             margin: 30px 0 20px;
@@ -200,7 +200,7 @@
             }
         }
 
-        #asosiy p {
+        #home p {
             font-size: 1.5rem;
             color: white;
             margin-bottom: 30px;
@@ -344,20 +344,20 @@
         }
 
         /* About Section */
-        #biz-haqimizda {
+        #about {
             background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             color: white;
         }
 
-        #biz-haqimizda h2 {
+        #about h2 {
             color: white;
         }
 
-        #biz-haqimizda h2::after {
+        #about h2::after {
             background: white;
         }
 
-        #biz-haqimizda p {
+        #about p {
             font-size: 1.3rem;
             line-height: 2;
             text-align: center;
@@ -464,15 +464,15 @@
                 display: none;
             }
 
-            #asosiy {
+            #home {
                 padding: 80px 20px;
             }
 
-            #asosiy h2 {
+            #home h2 {
                 font-size: 2.5rem;
             }
 
-            #asosiy p {
+            #home p {
                 font-size: 1.2rem;
             }
 
@@ -698,29 +698,29 @@
             <img src="image.png" alt="Frenzy Fast Food Logo" class="logo">
             
             <ul class="nav-menu" id="navMenu">
-                <li class="nav-item"><a href="#asosiy" class="nav-link">Asosiy</a></li>
-                <li class="nav-item"><a href="animatsiya2.html" class="nav-link">Reklama</a></li>
-                <li class="nav-item"><a href="animatsiya3.html" class="nav-link">Ma'lumot</a></li>
-                <li class="nav-item"><a href="animatsiya4.html" class="nav-link">Bog'lanish</a></li>
-                <li class="nav-item"><a href="animatsiya5.html" class="nav-link">Joylashuv</a></li>
+                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="animatsiya22.html" class="nav-link">Advert</a></li>
+                <li class="nav-item"><a href="animatsiya33.html" class="nav-link">Info</a></li>
+                <li class="nav-item"><a href="animatsiya44.html" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="animatsiya55.html" class="nav-link">Location</a></li>
             </ul>
             <select style=" background-color: rgba(255, 107, 53, 0.95); color: white; margin-left: 15px;" class="lang-select" onchange="goToSite(this.value); this.selectedIndex=0;">
-                <option selected >Til</option>
-                <option value="index1.html">En</option>
+                <option selected >Lang</option>
+                <option value="index.html">En</option>
                 <option value="index copy.html">Ru</option>
             </select>
         </nav>
     </header>
 
-    <section id="asosiy">
+    <section id="home">
         <img src="image copy.png" alt="Frenzy Fast Food">
-        <h2>Xush kelibsiz, Frenzy Fast Food!</h2>
-        <p>Tez, mazali va sifatli taomlar bizda!</p>
-        <a href="#menyu" class="btn">Menyuni Ko'rish</a>
+        <h2>Welcome to Frenzy Fast Food!</h2>
+        <p>Fast, delicious, and quality food is here!</p>
+        <a href="#menu" class="btn">View Menu</a>
     </section>
 
-    <div id="menyu" class="header">
-        <h1>MENYU</h1>
+    <div id="menu" class="header">
+        <h1>MENU</h1>
         <div class="contact-info">
             <div class="contact-item">
                 <span>📞</span>
@@ -734,15 +734,14 @@
     </div>
 
     <div class="menu-container">
-        <!-- Kombo Taomlar -->
         <div class="section">
-            <h2 class="section-title">🎁 Kombo Taomlar</h2>
+            <h2 class="section-title">🎁 Combo Meals</h2>
             <div class="menu-grid">
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 5.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">50/50 kombo</div>
-                        <div class="item-description">Strips original 0.5 kg<br>Oyoqcha 0.5 kg / fri</div>
+                        <div class="item-name">50/50 Combo</div>
+                        <div class="item-description">Strips original 0.5 kg<br>Chicken Leg 0.5 kg / Fries</div>
                         <div class="price-container">
                             <span class="old-price">105.000</span>
                             <span class="price">90.000</span>
@@ -752,8 +751,8 @@
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 6.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Twister kombo</div>
-                        <div class="item-description">2 shank / 1 fri<br>1 twister / ice tea choy</div>
+                        <div class="item-name">Twister Combo</div>
+                        <div class="item-description">2 Shank / 1 Fries<br>1 Twister / Ice Tea</div>
                         <div class="price-container">
                             <span class="old-price">49.000</span>
                             <span class="price">35.000</span>
@@ -763,8 +762,8 @@
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 3.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Burger kombo</div>
-                        <div class="item-description">2 chicken fri / 1 fri<br>1 burger / ice tea choy</div>
+                        <div class="item-name">Burger Combo</div>
+                        <div class="item-description">2 Chicken Fries / 1 Fries<br>1 Burger / Ice Tea</div>
                         <div class="price-container">
                             <span class="old-price">53.000</span>
                             <span class="price">40.000</span>
@@ -774,8 +773,8 @@
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 4.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Longer kombo</div>
-                        <div class="item-description">2 naggets / 1 fri / Longer<br>Ice Tea choy</div>
+                        <div class="item-name">Longer Combo</div>
+                        <div class="item-description">2 Nuggets / 1 Fries / Longer<br>Ice Tea</div>
                         <div class="price-container">
                             <span class="old-price">49.000</span>
                             <span class="price">35.000</span>
@@ -785,38 +784,37 @@
             </div>
         </div>
 
-        <!-- Toyuq Mahsulotlari -->
         <div class="section">
-            <h2 class="section-title">🍗 To'yuq Mahsulotlari</h2>
+            <h2 class="section-title">🍗 Chicken Products</h2>
             <div class="menu-grid">
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 7.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Mozzarella - 3 ta</div>
-                        <div class="item-description">Pishloq bilan</div>
+                        <div class="item-name">Mozzarella - 3 pcs</div>
+                        <div class="item-description">With cheese</div>
                         <div class="price">25.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 8.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Naggets - 5 ta</div>
-                        <div class="item-description">Tovuq nuggetlari</div>
+                        <div class="item-name">Nuggets - 5 pcs</div>
+                        <div class="item-description">Chicken nuggets</div>
                         <div class="price">15.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 9.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Sharik - 7 ta</div>
-                        <div class="item-description">To'yuq shariklari</div>
+                        <div class="item-name">Balls - 7 pcs</div>
+                        <div class="item-description">Chicken balls</div>
                         <div class="price">20.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 10.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Oyoqcha</div>
+                        <div class="item-name">Chicken Leg</div>
                         <div class="item-description">0.5 kg</div>
                         <div class="price">45.000</div>
                     </div>
@@ -824,7 +822,7 @@
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 10.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Oyoqcha</div>
+                        <div class="item-name">Chicken Leg</div>
                         <div class="item-description">1 kg</div>
                         <div class="price">80.000</div>
                     </div>
@@ -832,7 +830,7 @@
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 11.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Qanotcha (achchiq)</div>
+                        <div class="item-name">Chicken Wing (Spicy)</div>
                         <div class="item-description">0.5 kg</div>
                         <div class="price">40.000</div>
                     </div>
@@ -840,7 +838,7 @@
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 11.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Qanotcha (achchiq)</div>
+                        <div class="item-name">Chicken Wing (Spicy)</div>
                         <div class="item-description">1 kg</div>
                         <div class="price">70.000</div>
                     </div>
@@ -848,7 +846,7 @@
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 12.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Strips (original)</div>
+                        <div class="item-name">Strips (Original)</div>
                         <div class="item-description">0.5 kg</div>
                         <div class="price">45.000</div>
                     </div>
@@ -856,7 +854,7 @@
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 12.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Strips (original)</div>
+                        <div class="item-name">Strips (Original)</div>
                         <div class="item-description">1 kg</div>
                         <div class="price">80.000</div>
                     </div>
@@ -864,7 +862,7 @@
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 12.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Strips (achchiq)</div>
+                        <div class="item-name">Strips (Spicy)</div>
                         <div class="item-description">0.5 kg</div>
                         <div class="price">45.000</div>
                     </div>
@@ -872,7 +870,7 @@
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 12.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Strips (achchiq)</div>
+                        <div class="item-name">Strips (Spicy)</div>
                         <div class="item-description">1 kg</div>
                         <div class="price">80.000</div>
                     </div>
@@ -880,227 +878,221 @@
             </div>
         </div>
 
-        <!-- Burgerlar -->
         <div class="section">
-            <h2 class="section-title">🍔 Burgerlar</h2>
+            <h2 class="section-title">🍔 Burgers</h2>
             <div class="menu-grid">
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 13.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Burger klassik</div>
-                        <div class="item-description">Klassik burger</div>
+                        <div class="item-name">Classic Burger</div>
+                        <div class="item-description">Classic burger</div>
                         <div class="price">23.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 13.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Burger cheese</div>
-                        <div class="item-description">Pishloqli burger</div>
+                        <div class="item-name">Cheese Burger</div>
+                        <div class="item-description">Burger with cheese</div>
                         <div class="price">25.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 14.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Burger zinger</div>
-                        <div class="item-description">Achchiq burger</div>
+                        <div class="item-name">Zinger Burger</div>
+                        <div class="item-description">Spicy burger</div>
                         <div class="price">23.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 16.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Longer klassik</div>
-                        <div class="item-description">Klassik longer</div>
+                        <div class="item-name">Classic Longer</div>
+                        <div class="item-description">Classic longer</div>
                         <div class="price">19.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 15.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Longer cheese</div>
-                        <div class="item-description">Pishloqli longer</div>
+                        <div class="item-name">Cheese Longer</div>
+                        <div class="item-description">Longer with cheese</div>
                         <div class="price">21.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 17.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Longer zinger</div>
-                        <div class="item-description">Achchiq longer</div>
+                        <div class="item-name">Zinger Longer</div>
+                        <div class="item-description">Spicy longer</div>
                         <div class="price">19.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 18.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Longer mozzarella</div>
-                        <div class="item-description">Mozzarella bilan</div>
+                        <div class="item-name">Mozzarella Longer</div>
+                        <div class="item-description">With mozzarella</div>
                         <div class="price">25.000</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Twisterlar -->
         <div class="section">
-            <h2 class="section-title">🌯 Twisterlar</h2>
+            <h2 class="section-title">🌯 Twisters</h2>
             <div class="menu-grid">
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 19.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Twister klassik</div>
-                        <div class="item-description">Klassik lavash</div>
+                        <div class="item-name">Classic Twister</div>
+                        <div class="item-description">Classic wrap</div>
                         <div class="price">19.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 20.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Twister cheese</div>
-                        <div class="item-description">Pishloqli lavash</div>
+                        <div class="item-name">Cheese Twister</div>
+                        <div class="item-description">Wrap with cheese</div>
                         <div class="price">21.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 21.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Twister Zinger</div>
-                        <div class="item-description">Achchiq lavash</div>
+                        <div class="item-name">Zinger Twister</div>
+                        <div class="item-description">Spicy wrap</div>
                         <div class="price">19.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 22.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Twister Sezar</div>
-                        <div class="item-description">Sezar sousi bilan</div>
+                        <div class="item-name">Caesar Twister</div>
+                        <div class="item-description">With Caesar sauce</div>
                         <div class="price">19.000</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Frilar -->
         <div class="section">
-            <h2 class="section-title">🍟 Frilar</h2>
+            <h2 class="section-title">🍟 Fries</h2>
             <div class="menu-grid">
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 23.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Kartoshka fri</div>
-                        <div class="item-description">Klassik kartoshka fri</div>
+                        <div class="item-name">Potato Fries</div>
+                        <div class="item-description">Classic potato fries</div>
                         <div class="price">15.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 24.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Jaydari kartoshka</div>
-                        <div class="item-description">Qalin fri</div>
+                        <div class="item-name">Village Potatoes</div>
+                        <div class="item-description">Thick cut fries</div>
                         <div class="price">17.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 25.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Chicken fri - 5 ta</div>
-                        <div class="item-description">To'yuq fri</div>
+                        <div class="item-name">Chicken Fries - 5 pcs</div>
+                        <div class="item-description">Chicken fries</div>
                         <div class="price">15.000</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Salatlar va Non -->
         <div class="section">
-            <h2 class="section-title">🥗 Salatlar va Non</h2>
+            <h2 class="section-title">🥗 Salads and Bread</h2>
             <div class="menu-grid">
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 27.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Sezar salati</div>
-                        <div class="item-description">To'yuq va sabzavot salati</div>
+                        <div class="item-name">Caesar Salad</div>
+                        <div class="item-description">Chicken and vegetable salad</div>
                         <div class="price">28.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 28.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Frenzy salati</div>
-                        <div class="item-description">Maxsus salat</div>
+                        <div class="item-name">Frenzy Salad</div>
+                        <div class="item-description">Special salad</div>
                         <div class="price">25.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image"><img src="image copy 26.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Non</div>
-                        <div class="item-description">Yangi non</div>
+                        <div class="item-name">Bread</div>
+                        <div class="item-description">Fresh bread</div>
                         <div class="price">2.000</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Ichimliklar -->
         <div class="section">
-            <h2 class="section-title">🥤 Qaynoq va yaxna ichimliklar</h2>
+            <h2 class="section-title">🥤 Hot and Cold Drinks</h2>
             <div class="drinks-grid">
                 <div class="menu-item">
                     <div class="item-image" style="height: 150px; font-size: 60px;"><img style="height: 150px;" src="image copy 39.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Choy</div>
+                        <div class="item-name">Tea</div>
                         <div class="price">3.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image" style="height: 150px; font-size: 60px;"><img style="height: 150px;" src="image copy 38.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Limonli choy</div>
+                        <div class="item-name">Lemon Tea</div>
                         <div class="price">6.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image" style="height: 150px; font-size: 60px;"><img style="height: 150px;" src="image copy 40.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Kofe</div>
+                        <div class="item-name">Coffee</div>
                         <div class="price">5.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image" style="height: 150px; font-size: 60px;"><img style="height: 150px;" src="image copy 41.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Cappucino</div>
+                        <div class="item-name">Cappuccino</div>
                         <div class="price">7.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image" style="height: 150px; font-size: 60px;"><img style="height: 150px;" src="image copy 36.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Ice tea</div>
+                        <div class="item-name">Ice Tea</div>
                         <div class="price">9.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image" style="height: 150px; font-size: 60px;"><img style="height: 150px;" src="image copy 37.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Pepsi razliv</div>
+                        <div class="item-name">Pepsi on Tap</div>
                         <div class="price">9.000</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Souslar -->
         <div class="section">
-            <h2 class="section-title">🧂 Souslar</h2>
+            <h2 class="section-title">🧂 Sauces</h2>
             <div class="sauces-grid">
                 <div class="menu-item">
                     <div class="item-image" style="height: 120px; font-size: 50px;"><img src="image copy 29.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Sarimsqli</div>
+                        <div class="item-name">Garlic</div>
                         <div class="price">5.000</div>
                     </div>
                 </div>
@@ -1114,21 +1106,21 @@
                 <div class="menu-item">
                     <div class="item-image" style="height: 120px; font-size: 50px;"><img src="image copy 31.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Shirin-nordon</div>
+                        <div class="item-name">Sweet and Sour</div>
                         <div class="price">5.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image" style="height: 120px; font-size: 50px;"><img src="image copy 32.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Pomidorli</div>
+                        <div class="item-name">Tomato</div>
                         <div class="price">5.000</div>
                     </div>
                 </div>
                 <div class="menu-item">
                     <div class="item-image" style="height: 120px; font-size: 50px;"><img src="image copy 33.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Pishloqli</div>
+                        <div class="item-name">Cheese</div>
                         <div class="price">5.000</div>
                     </div>
                 </div>
@@ -1142,7 +1134,7 @@
                 <div class="menu-item">
                     <div class="item-image" style="height: 120px; font-size: 50px;"><img src="image copy 35.png" alt=""></div>
                     <div class="item-content">
-                        <div class="item-name">Sezar</div>
+                        <div class="item-name">Caesar</div>
                         <div class="price">5.000</div>
                     </div>
                 </div>
@@ -1150,24 +1142,24 @@
         </div>
     </div>
 
-    <section id="biz-haqimizda">
-        <h2>Biz Haqimizda</h2>
-        <p>Frenzy Fast Food — bu tez va mazali ovqatlanish uchun eng yaxshi tanlov! Biz har doim yangi va sifatli mahsulotlardan foydalanamiz. Mijozlarimizning mamnuniyati bizning asosiy maqsadimiz!</p>
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Frenzy Fast Food is the best choice for a quick and delicious meal! We always use fresh and high-quality products. Our main goal is the satisfaction of our customers!</p>
     </section>
 
-    <section id="aloqa">
-        <h2>Biz bilan Bog'laning</h2>
+    <section id="contact">
+        <h2>Contact Us</h2>
         <form id="contactForm">
-            <input type="text" placeholder="Ismingiz" id="name" required>
-            <input type="email" placeholder="Email manzilingiz" id="email" required>
-            <textarea placeholder="Xabaringiz" id="message"></textarea>
-            <button type="submit">Yuborish</button>
+            <input type="text" placeholder="Your Name" id="name" required>
+            <input type="email" placeholder="Your Email Address" id="email" required>
+            <textarea placeholder="Your Message" id="message"></textarea>
+            <button type="submit">Send</button>
         </form>
         <div id="formResult"></div>
     </section>
 
     <footer>
-        <p>&copy; 2025 Frenzy Fast Food. Barcha huquqlar himoyalangan.</p>
+        <p>&copy; 2025 Frenzy Fast Food. All rights reserved.</p>
     </footer>
 
     <script>
@@ -1195,7 +1187,7 @@
         // Form submission
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            document.getElementById('formResult').textContent = "✓ Xabaringiz muvaffaqiyatli yuborildi!";
+            document.getElementById('formResult').textContent = "✓ Your message has been successfully sent!";
             this.reset();
             setTimeout(() => {
                 document.getElementById('formResult').textContent = "";
